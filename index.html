@@ -769,57 +769,49 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 
   const contactForm = document.getElementById("contactForm");
   const formMessage = document.getElementById("formMessage");
   const sendButton = document.getElementById("sendButton");
 
-  contactForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
+  if (contactForm && formMessage && sendButton) {
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    // Add your real EmailJS IDs below before testing the form.
-    const serviceID = "service_jh9f2tz";
-    const templateID = "YOUR_TEMPLATE_ID";
-    const publicKey = "YOUR_PUBLIC_KEY";
+      const serviceID = "service_jh9f2tz";
+      const templateID = "template_4t7m8u2";
+      const publicKey = "InrOG2oRUFuSHupC-";
 
-    if (
-      serviceID === "YOUR_SERVICE_ID" ||
-      templateID === "YOUR_TEMPLATE_ID" ||
-      publicKey === "YOUR_PUBLIC_KEY"
-    ) {
-      formMessage.textContent =
-        "Contact form setup is incomplete. Please configure the email service first.";
-      return;
-    }
+      sendButton.disabled = true;
+      sendButton.textContent = "Sending...";
+      formMessage.textContent = "";
 
-    sendButton.disabled = true;
-    sendButton.textContent = "Sending...";
-    formMessage.textContent = "";
+      try {
+        await emailjs.sendForm(
+          serviceID,
+          templateID,
+          contactForm,
+          { publicKey: publicKey }
+        );
 
-    try {
-      await emailjs.sendForm(
-        serviceID,
-        templateID,
-        contactForm,
-        { publicKey: publicKey }
-      );
+        formMessage.textContent =
+          "Your message has been sent successfully!";
 
-      formMessage.textContent =
-        "Your message has been sent successfully!";
-      contactForm.reset();
+        contactForm.reset();
 
-    } catch (error) {
-        console.error("Email sending failed:", error);
-      formMessage.textContent =
-        "Message could not be sent. Please check the email service settings and try again.";
+      } catch (error) {
+        console.error("EmailJS error:", error);
 
-    } finally {
-      sendButton.disabled = false;
-      sendButton.textContent = "Send Message ✉️";
-    }
-  });
+        formMessage.textContent =
+          "Message could not be sent. Please check your EmailJS settings.";
+      } finally {
+        sendButton.disabled = false;
+        sendButton.textContent = "Send Message ✉️";
+      }
+    });
+  }
 </script>
-
 </body>
 </html>
