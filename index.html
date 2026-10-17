@@ -1,609 +1,824 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aleena Javaid's web development portfolio, projects, skills and contact information.">
+  <title>Aleena Javaid | Web Developer Portfolio</title>
 
-    <meta name="description"
-          content="Aleena Javaid's web development portfolio, projects and contact information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>Aleena Javaid | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #131b30;
+      --text: #f5f7ff;
+      --muted: #a9b3ca;
+      --purple: #a78bfa;
+      --pink: #f472b6;
+      --border: rgba(255,255,255,.10);
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #f8fafc;
-            line-height: 1.7;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        header {
-            background: #111c33;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #293950;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        .logo {
-            color: #67e8f9;
-            font-size: 23px;
-            font-weight: bold;
-        }
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
 
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 17px;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,16,32,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        nav a {
-            font-size: 14px;
-            transition: 0.3s;
-        }
+    nav {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 15px 0;
+    }
 
-        nav a:hover {
-            color: #67e8f9;
-        }
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-        section {
-            padding: 75px 8%;
-            scroll-margin-top: 75px;
-        }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 13px;
+    }
 
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-            background: linear-gradient(135deg, #0f172a, #172554);
-        }
+    .nav-links a {
+      color: var(--muted);
+      transition: .3s;
+    }
 
-        .hero-text {
-            flex: 1;
-            min-width: 260px;
-        }
+    .nav-links a:hover {
+      color: var(--pink);
+    }
 
-        .hero-text .small-title {
-            color: #67e8f9;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+    .section {
+      padding: 85px 0;
+      scroll-margin-top: 90px;
+    }
 
-        h1 {
-            font-size: clamp(35px, 5vw, 55px);
-            line-height: 1.2;
-            margin: 15px 0;
-        }
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 15% 20%, #39245c55, transparent 35%),
+        radial-gradient(circle at 90% 70%, #76294d33, transparent 30%);
+    }
 
-        h1 span, h2 span {
-            color: #67e8f9;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 50px;
+      align-items: center;
+    }
 
-        .hero-text p {
-            color: #cbd5e1;
-            margin-bottom: 25px;
-            max-width: 600px;
-        }
+    .tag {
+      display: inline-block;
+      color: var(--purple);
+      background: #a78bfa18;
+      border: 1px solid #a78bfa44;
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
 
-        .profile-photo {
-            width: 280px;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 25px;
-            border: 4px solid #67e8f9;
-            box-shadow: 0 0 25px #0891b255;
-        }
+    h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
 
-        .btn {
-            display: inline-block;
-            background: #0891b2;
-            color: white;
-            padding: 11px 22px;
-            border-radius: 8px;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-        .btn:hover {
-            background: #0e7490;
-            transform: translateY(-3px);
-        }
+    .hero p, .section-text {
+      color: var(--muted);
+      max-width: 650px;
+    }
 
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
 
-        .description {
-            max-width: 800px;
-            color: #cbd5e1;
-        }
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: .3s;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit, minmax(240px, 1fr)
-            );
-            gap: 25px;
-            margin-top: 30px;
-        }
+    .btn-primary {
+      color: #111020;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+      border: none;
+    }
 
-        .card {
-            background: #172338;
-            border: 1px solid #293950;
-            border-radius: 14px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: .9;
+    }
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: #67e8f9;
-        }
+    .profile-box {
+      padding: 15px;
+      border: 1px solid #a78bfa66;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #a78bfa22, #f472b622);
+      box-shadow: 0 20px 60px #0005;
+      max-width: 350px;
+      margin: auto;
+    }
 
-        .project-image {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-            display: block;
-            background: #263449;
-        }
+    .profile-img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 22px;
+      background: var(--card);
+    }
 
-        .card-content {
-            padding: 22px;
-        }
+    .profile-caption {
+      text-align: center;
+      padding: 15px 5px 5px;
+      color: var(--muted);
+      font-size: 13px;
+    }
 
-        .card h3 {
-            color: #67e8f9;
-            margin-bottom: 10px;
-        }
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-        .card p {
-            color: #cbd5e1;
-            margin-bottom: 18px;
-        }
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 12px;
+    }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-            margin-top: 25px;
-        }
+    .section-heading p {
+      color: var(--muted);
+    }
 
-        .skill {
-            padding: 10px 19px;
-            border: 1px solid #334155;
-            background: #172338;
-            color: #bae6fd;
-            border-radius: 25px;
-        }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
 
-        .education-card {
-            padding: 23px;
-            background: #172338;
-            border-left: 4px solid #67e8f9;
-            border-radius: 8px;
-        }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      transition: .3s;
+    }
 
-        .education-card h3 {
-            color: #67e8f9;
-        }
+    .card:hover {
+      border-color: #a78bfa88;
+      transform: translateY(-4px);
+    }
 
-        .contact-layout {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit, minmax(260px, 1fr)
-            );
-            gap: 35px;
-            margin-top: 30px;
-        }
+    .card h3 {
+      margin-bottom: 12px;
+    }
 
-        .contact-info p {
-            color: #cbd5e1;
-            margin: 12px 0;
-            overflow-wrap: anywhere;
-        }
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 13px;
-        }
+    .info-list {
+      list-style: none;
+      margin-top: 12px;
+    }
 
-        label {
-            font-weight: bold;
-        }
+    .info-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
 
-        input, textarea {
-            width: 100%;
-            padding: 13px;
-            background: #172338;
-            color: white;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            font: inherit;
-        }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
 
-        input:focus, textarea:focus {
-            outline: 2px solid #0891b2;
-        }
+    .skill {
+      text-align: center;
+      padding: 24px 10px;
+    }
 
-        textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
+    .skill span {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-        #formMessage {
-            color: #67e8f9;
-            overflow-wrap: anywhere;
-        }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
 
-        footer {
-            background: #080f1f;
-            text-align: center;
-            padding: 25px;
-            color: #94a3b8;
-        }
+    .project-card {
+      padding: 0;
+      overflow: hidden;
+    }
 
-        @media (max-width: 700px) {
-            header {
-                padding: 16px 5%;
-            }
+    .project-img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      background: #202943;
+    }
 
-            nav {
-                gap: 12px;
-            }
+    .project-content {
+      padding: 22px;
+    }
 
-            section {
-                padding: 55px 6%;
-            }
+    .project-content h3 {
+      margin-bottom: 10px;
+    }
 
-            .hero {
-                text-align: center;
-                justify-content: center;
-            }
+    .project-content p {
+      margin-bottom: 18px;
+    }
 
-            .profile-photo {
-                width: 230px;
-                height: 260px;
-            }
+    .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-            h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
+    .small-btn {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #a78bfa66;
+      color: var(--purple);
+      font-size: 12px;
+    }
+
+    .education-box {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .education-item {
+      margin-bottom: 18px;
+      border-left: 3px solid var(--purple);
+    }
+
+    .education-item p {
+      margin-top: 5px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 25px;
+    }
+
+    .contact-info a {
+      color: var(--purple);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-form label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px 14px;
+      margin-top: 6px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: #0c1427;
+      color: white;
+      font: inherit;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--purple);
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    #formMessage {
+      color: var(--purple);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      background: #080c17;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--pink);
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .profile-box {
+        max-width: 290px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <a href="#home" class="logo">Aleena.dev</a>
+  <nav class="container">
+    <a class="logo" href="#home">Aleena.dev</a>
 
-    <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 </header>
 
 <main>
+  <section class="hero section" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag">Welcome to my portfolio</span>
+        <h1>Hi, I'm <span class="gradient-text">Aleena Javaid</span></h1>
+        <h2 style="font-size:22px; margin-bottom:15px;">
+          Aspiring Web Developer
+        </h2>
+        <p>
+          I am learning web development and creating simple, attractive
+          and user-friendly websites. Explore my projects and feel free
+          to contact me for website work or collaboration.
+        </p>
 
-    <!-- HOME -->
-    <section class="hero" id="home">
-
-        <div class="hero-text">
-            <p class="small-title">WELCOME TO MY PORTFOLIO</p>
-
-            <h1>Hi, I'm <span>Aleena Javaid</span></h1>
-
-            <h2>Aspiring Web Developer</h2>
-
-            <p>
-                I enjoy creating attractive websites and learning
-                new web technologies. Explore my projects, skills
-                and learning journey.
-            </p>
-
-            <a href="#projects" class="btn">Explore My Work</a>
-            <a href="#contact" class="btn">Contact Me</a>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#projects">Explore My Work ↗️</a>
+          <a class="btn" href="#contact">Contact Me</a>
         </div>
+      </div>
 
+      <div class="profile-box">
         <img
-            src="../images/profile.jpg"
-            alt="Aleena Javaid profile picture"
-            class="profile-photo"
+          class="profile-img"
+          src="images/profile.jpg"
+          alt="Aleena Javaid profile photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
         >
-
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <h2>About <span>Me</span></h2>
-
-        <p class="description">
-            I am an aspiring web developer who enjoys designing
-            websites and learning HTML, CSS and JavaScript.
-            I work on practical projects to improve my coding
-            skills and create useful web experiences.
-        </p>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>My <span>Skills</span></h2>
-
-        <p class="description">
-            These are some of the technologies and tools I use
-            while learning and building my projects.
-        </p>
-
-        <div class="skills">
-            <span class="skill">HTML5</span>
-            <span class="skill">CSS3</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Responsive Design</span>
-            <span class="skill">VS Code</span>
-            <span class="skill">Git & GitHub</span>
+        <div style="display:none; aspect-ratio:4/5; align-items:center; justify-content:center; flex-direction:column; gap:10px; background:#202943; border-radius:22px; text-align:center; padding:20px;">
+          <span style="font-size:60px;">👩🏻‍💻</span>
+          <strong>Profile Photo</strong>
+          <small style="color:#a9b3ca;">Add your photo as images/profile.jpg</small>
         </div>
-    </section>
+        <div class="profile-caption">Learning • Creating • Improving</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h2>My <span>Projects</span></h2>
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-heading">
+        <h2>About <span class="gradient-text">Me</span></h2>
+        <p>A little introduction about me and my work.</p>
+      </div>
 
-        <p class="description">
-            Here are some of my web development projects.
-            Click View Project to open a project.
-        </p>
-
-        <div class="cards">
-
-            <!-- Pinterest Clone -->
-            <article class="card">
-                <img
-                    src="../images/pinterest.png"
-                    alt="Pinterest Clone project preview"
-                    class="project-image"
-                    loading="lazy"
-                >
-
-                <div class="card-content">
-                    <h3>Pinterest Clone</h3>
-
-                    <p>
-                        A Pinterest-inspired website for exploring
-                        images and creative ideas.
-                    </p>
-
-                    <a
-                        class="btn"
-                        href="../pinterest-clone/index.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View Project ↗️
-                    </a>
-                </div>
-            </article>
-
-            <!-- Beautiful Flowers -->
-            <article class="card">
-                <img
-                    src="../images/pinterest2.png"
-                    alt="Beautiful Flowers project preview"
-                    class="project-image"
-                    loading="lazy"
-                >
-
-                <div class="card-content">
-                    <h3>Beautiful Flowers</h3>
-
-                    <p>
-                        A flower-themed website featuring a colorful
-                        design and beautiful floral images.
-                    </p>
-
-                    <a
-                        class="btn"
-                        href="../Beautiful-Flowers/index.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View Project ↗️
-                    </a>
-                </div>
-            </article>
-
-            <!-- My First Web Page -->
-            <article class="card">
-                <img
-                    src="../images/web%20page.png"
-                    alt="My First Web Page project preview"
-                    class="project-image"
-                    loading="lazy"
-                >
-
-                <div class="card-content">
-                    <h3>My First Web Page</h3>
-
-                    <p>
-                        One of my early web development projects,
-                        created while learning HTML and CSS.
-                    </p>
-
-                    <a
-                        class="btn"
-                        href="../images/web%20page.png"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View Preview ↗️
-                    </a>
-                </div>
-            </article>
-
+      <div class="about-grid">
+        <div class="card">
+          <h3>Who Am I?</h3>
+          <p>
+            My name is Aleena Javaid. I am a student who is developing
+            skills in web development. I enjoy learning HTML, CSS and
+            JavaScript and using them to build websites.
+          </p>
+          <p style="margin-top:12px;">
+            My goal is to improve my coding skills, create useful
+            websites and gain practical experience through projects.
+          </p>
         </div>
-    </section>
 
-    <!-- EDUCATION -->
-    <section id="education">
-        <h2>My <span>Education</span></h2>
-
-        <div class="cards">
-
-            <article class="education-card">
-                <h3>Matriculation</h3>
-                <p>Add your school, year and marks here.</p>
-            </article>
-
-            <article class="education-card">
-                <h3>Intermediate</h3>
-                <p>Add your college, programme and result here.</p>
-            </article>
-
-            <article class="education-card">
-                <h3>Graduation</h3>
-                <p>Add your university and degree details here.</p>
-            </article>
-
+        <div class="card">
+          <h3>Quick Information</h3>
+          <ul class="info-list">
+            <li><strong>Name:</strong> Aleena Javaid</li>
+            <li><strong>Role:</strong> Aspiring Web Developer</li>
+            <li><strong>Interests:</strong> Web Design and Coding</li>
+            <li><strong>Current Focus:</strong> HTML, CSS and JavaScript</li>
+            <li><strong>Availability:</strong> Open to learning opportunities</li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>Contact <span>Me</span></h2>
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-heading">
+        <h2>My <span class="gradient-text">Skills</span></h2>
+        <p>Technologies I am learning and practising.</p>
+      </div>
 
-        <p class="description">
-            Have a project idea or a question?
-            Send me a message using the form below.
-        </p>
+      <div class="skills-grid">
+        <div class="card skill">
+          <span>🌐</span>
+          <h3>HTML</h3>
+          <p>Website structure</p>
+        </div>
 
-        <div class="contact-layout">
+        <div class="card skill">
+          <span>🎨</span>
+          <h3>CSS</h3>
+          <p>Styling and layouts</p>
+        </div>
 
-            <div class="contact-info">
-                <h3>Let's Work Together</h3>
+        <div class="card skill">
+          <span>⚡</span>
+          <h3>JavaScript</h3>
+          <p>Basic interactivity</p>
+        </div>
 
-                <p>
-                    I welcome questions, project ideas and
-                    opportunities to collaborate.
-                </p>
+        <div class="card skill">
+          <span>⚛️</span>
+          <h3>React</h3>
+          <p>Learning components</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <p>
-                    <strong>Email:</strong>
-                    aleenajavaid22@gmail.com
-                </p>
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <h2>My <span class="gradient-text">Projects</span></h2>
+        <p>Some websites and practice projects I have worked on.</p>
+      </div>
 
-                <p><strong>Location:</strong> Pakistan</p>
+      <div class="projects-grid">
+        <article class="card project-card">
+          <img
+            class="project-img"
+            src="images/pinterest.png"
+            alt="Pinterest clone project preview"
+            onerror="this.style.display='none';"
+          >
+          <div class="project-content">
+            <h3>Pinterest Clone</h3>
+            <p>
+              A Pinterest-inspired website layout made for practising
+              web design and arranging visual content.
+            </p>
+            <div class="project-links">
+              <a class="small-btn" href="pinterest-clone/index.html">
+                Open Project ↗️
+              </a>
+              <a class="small-btn" href="https://github.com/aleena586/aleena-portfolio">
+                View Code
+              </a>
             </div>
+          </div>
+        </article>
 
-            <form id="contactForm">
+        <article class="card project-card">
+          <img
+            class="project-img"
+            src="images/pinterest2.png"
+            alt="Beautiful Flowers project preview"
+            onerror="this.style.display='none';"
+          >
+          <div class="project-content">
+            <h3>Beautiful Flowers</h3>
+            <p>
+              A flower-themed website with colourful visuals and
+              a simple, attractive page layout.
+            </p>
+            <div class="project-links">
+              <a class="small-btn" href="Beautiful-Flowers/index.html">
+                Open Project ↗️
+              </a>
+              <a class="small-btn" href="https://github.com/aleena586/aleena-portfolio">
+                View Code
+              </a>
+            </div>
+          </div>
+        </article>
 
-                <label for="name">Your Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="from_name"
-                    placeholder="Enter your name"
-                    maxlength="100"
-                    required
-                >
+        <article class="card project-card">
+          <img
+            class="project-img"
+            src="images/web%20page.png"
+            alt="My first web page preview"
+            onerror="this.style.display='none';"
+          >
+          <div class="project-content">
+            <h3>My First Web Page</h3>
+            <p>
+              One of my early practice projects, created while
+              learning the basics of building web pages.
+            </p>
+            <div class="project-links">
+              <a class="small-btn" href="images/web%20page.png" target="_blank" rel="noopener">
+                View Preview ↗️
+              </a>
+              <a class="small-btn" href="https://github.com/aleena586/aleena-portfolio">
+                View Repository
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-                <label for="email">Your Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="reply_to"
-                    placeholder="Enter your email"
-                    maxlength="150"
-                    required
-                >
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-heading">
+        <h2>My <span class="gradient-text">Education</span></h2>
+        <p>My learning journey.</p>
+      </div>
 
-                <label for="subject">Subject</label>
-                <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="Message subject"
-                    maxlength="150"
-                    required
-                >
-
-                <label for="message">Your Message</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Write your message..."
-                    maxlength="4000"
-                    required
-                ></textarea>
-
-                <button type="submit" class="btn" id="sendButton">
-                    Send Message
-                </button>
-
-                <p id="formMessage" role="status"
-                   aria-live="polite"></p>
-
-            </form>
+      <div class="education-box">
+        <div class="card education-item">
+          <h3>University Education</h3>
+          <p>
+            Studying Computer Science and developing my knowledge
+            of programming and web development.
+          </p>
         </div>
-    </section>
 
+        <div class="card education-item">
+          <h3>Intermediate</h3>
+          <p>Completed intermediate-level studies.</p>
+        </div>
+
+        <div class="card education-item">
+          <h3>Matriculation</h3>
+          <p>Completed secondary-level education.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Contact <span class="gradient-text">Me</span></h2>
+        <p>Have a project idea or want to get in touch? Send me a message.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card contact-info">
+          <h3>Let's Connect!</h3>
+          <p style="margin:15px 0; color:var(--muted);">
+            You can contact me about website projects, learning
+            opportunities or collaboration.
+          </p>
+
+          <p style="margin-bottom:12px;">
+            <strong>✉️ Email:</strong><br>
+            <a href="mailto:YOUR_EMAILaleenajavaid22@gmail.com">
+              YOUR_EMAILaleenajavaid22@gmail.com.com
+            </a>
+          </p>
+
+          <p style="color:var(--muted); font-size:13px;">
+            Replace the example email with your actual contact email.
+          </p>
+
+          <p style="margin-top:20px;">
+            <a href="https://github.com/aleena586/aleena-portfolio"
+               target="_blank" rel="noopener">
+              GitHub Repository ↗️
+            </a>
+          </p>
+        </div>
+
+        <div class="card">
+          <form class="contact-form" id="contactForm">
+            <label>
+              Your Name
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Enter your name"
+                required
+                maxlength="100"
+              >
+            </label>
+
+            <label>
+              Your Email
+              <input
+                type="email"
+                name="reply_to"
+                placeholder="Enter your email"
+                required
+                maxlength="150"
+              >
+            </label>
+
+            <label>
+              Subject
+              <input
+                type="text"
+                name="subject"
+                placeholder="What is your message about?"
+                required
+                maxlength="150"
+              >
+            </label>
+
+            <label>
+              Your Message
+              <textarea
+                name="message"
+                placeholder="Write your message here..."
+                required
+                maxlength="3000"
+              ></textarea>
+            </label>
+
+            <button class="btn btn-primary" type="submit" id="sendButton">
+              Send Message ✉️
+            </button>
+
+            <p id="formMessage" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-    <p>
-        &copy; <span id="year"></span> Aleena Javaid.
-        All Rights Reserved.
+  <div class="container">
+    <p>© <span id="year"></span> Aleena Javaid. Made with ❤️ and code.</p>
+    <p style="margin-top:6px;">
+      <a href="#home">Back to top ↑</a>
     </p>
-    <p>My Web Development Portfolio</p>
+  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+
 <script>
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    /*
-      Contact form will work after adding real EmailJS details.
-      Do not remove your existing email setup without saving its IDs.
-    */
+  const contactForm = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+  const sendButton = document.getElementById("sendButton");
 
-    const contactForm = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
-    const sendButton = document.getElementById("sendButton");
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+    // Add your real EmailJS IDs below before testing the form.
+    const serviceID = "service_jh9f2tz";
+    const templateID = "YOUR_TEMPLATE_ID";
+    const publicKey = "YOUR_PUBLIC_KEY";
 
-        formMessage.textContent =
-            "Email service setup is required before messages can be sent.";
-    });
+    if (
+      serviceID === "YOUR_SERVICE_ID" ||
+      templateID === "YOUR_TEMPLATE_ID" ||
+      publicKey === "YOUR_PUBLIC_KEY"
+    ) {
+      formMessage.textContent =
+        "Contact form setup is incomplete. Please configure the email service first.";
+      return;
+    }
+
+    sendButton.disabled = true;
+    sendButton.textContent = "Sending...";
+    formMessage.textContent = "";
+
+    try {
+      await emailjs.sendForm(
+        serviceID,
+        templateID,
+        contactForm,
+        { publicKey: publicKey }
+      );
+
+      formMessage.textContent =
+        "Your message has been sent successfully!";
+      contactForm.reset();
+
+    } catch (error) {
+        console.error("Email sending failed:", error);
+      formMessage.textContent =
+        "Message could not be sent. Please check the email service settings and try again.";
+
+    } finally {
+      sendButton.disabled = false;
+      sendButton.textContent = "Send Message ✉️";
+    }
+  });
 </script>
 
 </body>
