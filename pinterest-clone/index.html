@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinora - Discover Inspiration</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">P</span>
+            <span>Pinora</span>
+        </a>
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input type="text" id="searchInput"
+                   placeholder="Search for ideas, images, and more...">
+        </div>
+
+        <button class="profile-btn" id="profileBtn" title="Profile">👤</button>
+    </header>
+
+    <aside class="sidebar">
+        <a href="#" class="side-link active" data-page="home">⌂ <span>Home</span></a>
+        <a href="#discover" class="side-link" data-page="discover">◎ <span>Explore</span></a>
+        <a href="#create" class="side-link" id="createBtn">＋ <span>Create Pin</span></a>
+
+        <div class="sidebar-line"></div>
+
+        <h4>Your Space</h4>
+        <a href="#saved" class="side-link" id="savedBtn">♡ <span>Saved Pins</span></a>
+
+        <div class="sidebar-line"></div>
+
+        <h4>Explore Categories</h4>
+        <a href="#" class="side-link category-link" data-category="Fashion">♧ <span>Fashion</span></a>
+        <a href="#" class="side-link category-link" data-category="Nature">❋ <span>Nature</span></a>
+        <a href="#" class="side-link category-link" data-category="Flowers">✿ <span>Flowers</span></a>
+        <a href="#" class="side-link category-link" data-category="Food">♨️ <span>Food</span></a>
+        <a href="#" class="side-link category-link" data-category="Travel">✈️ <span>Travel</span></a>
+        <a href="#" class="side-link category-link" data-category="Home Decor">⌂ <span>Home Decor</span></a>
+        <a href="#" class="side-link category-link" data-category="Art">✎ <span>Art</span></a>
+    </aside>
+
+    <main class="main-content" id="home">
+        <section class="welcome">
+            <p class="eyebrow">YOUR DAILY DOSE OF INSPIRATION</p>
+            <h1>Find your next <span>big idea.</span></h1>
+            <p class="subtitle">Collect inspiration. Discover creativity. Make it yours.</p>
+        </section>
+
+        <nav class="category-bar" id="categoryBar">
+            <button class="category-chip selected" data-category="All">✦ All Ideas</button>
+            <button class="category-chip" data-category="Fashion">👗 Fashion</button>
+            <button class="category-chip" data-category="Nature">🌿 Nature</button>
+            <button class="category-chip" data-category="Flowers">🌷 Flowers</button>
+            <button class="category-chip" data-category="Food">🍓 Food</button>
+            <button class="category-chip" data-category="Travel">✈️ Travel</button>
+            <button class="category-chip" data-category="Home Decor">🪴 Home Decor</button>
+            <button class="category-chip" data-category="Art">🎨 Art</button>
+        </nav>
+
+        <div class="section-heading">
+            <div>
+                <h2 id="sectionTitle">Ideas for you</h2>
+                <p>Little things that inspire big dreams.</p>
+            </div>
+            <span class="result-count" id="resultCount"></span>
+        </div>
+
+        <section class="pin-grid" id="pinGrid"></section>
+
+        <div class="empty-state" id="emptyState" hidden>
+            <span>🔎</span>
+            <h3>No ideas found</h3>
+            <p>Try another search or choose a different category.</p>
+            <button class="primary-btn" id="resetBtn">Show all ideas</button>
+        </div>
+
+        <footer>
+            <p>Made with <span>♥️</span> for creative minds.</p>
+            <p class="footer-small">Pinora — Your little corner of inspiration</p>
+        </footer>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <dialog id="createDialog" class="create-dialog">
+        <form id="createForm">
+            <button type="button" class="close-btn" id="closeDialog">×</button>
+            <p class="eyebrow">SHARE YOUR CREATIVITY</p>
+            <h2>Create a new pin</h2>
+            <label for="pinTitle">Pin title</label>
+            <input type="text" id="pinTitle" placeholder="e.g. My dream room" required>
+
+            <label for="pinImage">Image URL</label>
+            <input type="url" id="pinImage" placeholder="https://example.com/image.jpg" required>
+
+            <label for="pinCategory">Category</label>
+            <select id="pinCategory">
+                <option>Fashion</option>
+                <option>Nature</option>
+                <option>Flowers</option>
+                <option>Food</option>
+                <option>Travel</option>
+                <option>Home Decor</option>
+                <option>Art</option>
+            </select>
+
+            <button type="submit" class="primary-btn">Publish Pin ↗️</button>
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

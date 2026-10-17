@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aleena Javaid | Web Developer</title>
+    <meta name="description" content="Aleena Javaid's web development portfolio featuring projects, skills, education and contact information.">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#home" class="logo">Aleena<span>.</span></a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">HELLO, WELCOME TO MY PORTFOLIO</p>
+
+                <h1>Hi, I'm <span>Aleena Javaid</span></h1>
+
+                <h2>Aspiring Web Developer</h2>
+
+                <p class="hero-description">
+                    I enjoy creating beautiful and user-friendly
+                    websites. I am learning web development and
+                    improving my skills through practical projects.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">
+                        Explore My Work
+                    </a>
+
+                    <a href="#contact" class="btn outline-btn">
+                        Contact Me
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/"
+                       target="_blank" rel="noopener noreferrer">
+                        GitHub ↗️
+                    </a>
+
+                    <a href="https://www.linkedin.com/"
+                       target="_blank" rel="noopener noreferrer">
+                        LinkedIn ↗️
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-frame">
+                    <img src="images/profile.jpg"
+                         alt="Aleena Javaid"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+
+                    <div class="image-placeholder">
+                        AJ
+                    </div>
+                </div>
+
+                <div class="floating-card">
+                    <span>✦</span>
+                    Learning. Building. Growing.
+                </div>
+            </div>
+        </section>
+
+        <section class="section about-section" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">GET TO KNOW ME</p>
+                <h2>About <span>Me</span></h2>
+            </div>
+
+            <div class="about-card">
+                <div class="about-icon">💻</div>
+
+                <div>
+                    <h3>My Web Development Journey</h3>
+
+                    <p>
+                        I am Aleena Javaid, an aspiring web developer
+                        with an interest in designing and building
+                        websites. I started with basic HTML and CSS
+                        and am now exploring JavaScript and responsive
+                        web design. My goal is to create useful,
+                        attractive and accessible websites while
+                        continuing to learn new technologies.
+                    </p>
+
+                    <a href="#skills" class="text-link">
+                        Discover my skills →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills-section" id="skills">
+            <div class="section-heading">
+                <p class="eyebrow">WHAT I AM LEARNING</p>
+                <h2>My <span>Skills</span></h2>
+                <p>Technologies I use in my web development projects.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon html-icon">5</div>
+                    <h3>HTML</h3>
+                    <p>Building webpage structure</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon css-icon">3</div>
+                    <h3>CSS</h3>
+                    <p>Styling and responsive layouts</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon js-icon">JS</div>
+                    <h3>JavaScript</h3>
+                    <p>Learning interactive features</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon git-icon">G</div>
+                    <h3>Git & GitHub</h3>
+                    <p>Managing and sharing projects</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects-section" id="projects">
+            <div class="section-heading">
+                <p class="eyebrow">MY RECENT WORK</p>
+                <h2>Featured <span>Projects</span></h2>
+                <p>A few projects I have created while learning web development.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <img src="images/pinterest.png"
+                         alt="Pinterest Clone project screenshot"
+                         class="project-image">
+
+                    <div class="project-info">
+                        <span class="project-number">PROJECT 01</span>
+                        <h3>Pinterest Clone</h3>
+
+                        <p>
+                            A Pinterest-inspired image gallery
+                            with a modern layout and visual cards.
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                    <a href="../Pinterest-Clone/index.html"
+   class="project-link">
+    View Project ↗️
+</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/flower-webpage.png"
+                         alt="Flower Webpage project screenshot"
+                         class="project-image">
+
+                    <div class="project-info">
+                        <span class="project-number">PROJECT 02</span>
+                        <h3>Beautiful Flowers</h3>
+
+                        <p>
+                            A simple flower gallery with images,
+                            headings and a soft pink design.
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+
+                        <a href="../Beautiful-Flowers/index.html"
+   class="project-link">
+    View Project ↗️
+</a>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-placeholder">
+                        <span>✧</span>
+                        <p>My First Web Page</p>
+                    </div>
+
+                    <div class="project-info">
+                        <span class="project-number">PROJECT 03</span>
+                        <h3>My First Web Page</h3>
+
+                        <p>
+                            My first learning project that helped
+                            me understand the basics of HTML and CSS.
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+
+                        <a href="#contact" class="project-link">
+                            Ask About Project ↗️
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section education-section" id="education">
+            <div class="section-heading">
+                <p class="eyebrow">MY LEARNING BACKGROUND</p>
+                <h2>Education & <span>Learning</span></h2>
+            </div>
+
+            <div class="education-card">
+                <div class="education-dot"></div>
+
+                <div>
+                    <span class="project-number">CURRENT LEARNING</span>
+                    <h3>Web Development</h3>
+
+                    <p>
+                        Learning website structure, styling,
+                        JavaScript basics and building projects
+                        through practical exercises.
+                    </p>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-dot"></div>
+
+                <div>
+                    <span class="project-number">ACADEMIC STUDIES</span>
+                    <h3>Computer Science Student</h3>
+
+                    <p>
+                        Studying computer science and developing
+                        my technical and problem-solving skills.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+            <div class="section-heading">
+                <p class="eyebrow">LET'S CONNECT</p>
+                <h2>Contact <span>Me</span></h2>
+
+                <p>
+                    Have a question or want to talk about a project?
+                    Feel free to send me a message.
+                </p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <input type="text" id="name"
+                           placeholder="Your Name" required>
+
+                    <input type="email" id="email"
+                           placeholder="Your Email" required>
+                </div>
+
+                <input type="text" id="subject"
+                       placeholder="Subject" required>
+
+                <textarea id="message" rows="5"
+                          placeholder="Write your message..."
+                          required></textarea>
+
+                <button type="submit" class="btn primary-btn">
+                    Send Message ↗️
+                </button>
+
+                <p id="formMessage" class="form-message"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#home" class="logo">Aleena<span>.</span></a>
+
+        <p>Learning, creating and growing as a web developer.</p>
+
+        <p class="copyright">
+            © 2026 Aleena Javaid. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
